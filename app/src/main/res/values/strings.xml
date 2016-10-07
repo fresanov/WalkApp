@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">WalkApp</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="time">Time</string>
+    <string name="temperature_c">Temperature(°C)</string>
+    <string name="weather">Weather</string>
+    <string name="gps_warning">Gps not turned on!</string>
+    <string name="delete_entry">Delete entry</string>
+    <string name="you_sure">Are you sure you want to delete walk data history?</string>
+    <string name="location_input">Location input</string>
+    <string name="enter_location">"Enter name of your location: "</string>
+    <string name="name_location">Name of location</string>
+    <string name="modify_weight">Modify weight</string>
+    <string name="here_modify_weight">"Here you can modify your weight, current weight is: "</string>
+    <string name="weight_entry">Weight entry</string>
+    <string name="app_requires_weight">In order to be able to calculate burned calories, app requires your weight</string>
+    <string name="press_start_again">Press start again</string>
+    <string name="history">History</string>
+    <string name="delete_history">Delete History</string>
+    <string name="get_weather">Get Weather</string>
+    <string name="modify_weight_btn">Modify Weight</string>
+    <string name="date">Date</string>
+    <string name="distance">Distance</string>
+    <string name="steps">Steps</string>
+    <string name="calories">Calories</string>
+</resources>

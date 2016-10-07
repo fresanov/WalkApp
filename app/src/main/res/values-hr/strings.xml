@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">WalkApp</string>
+    <string name="app_requires_weight">Kako bi aplikacija mogla izracunati potrosene kalorije, potrebna je vasa tjelesna masa</string>
+    <string name="calories">Kalorije</string>
+    <string name="date">Datum</string>
+    <string name="delete_entry">Brisanje unosa</string>
+    <string name="delete_history">Brisanje mjerenja</string>
+    <string name="distance">Udaljenost</string>
+    <string name="enter_location">Unesite naziv vase lokacije</string>
+    <string name="get_weather">Dohvati vrijeme</string>
+    <string name="gps_warning">Gps nije ukljucen!</string>
+    <string name="here_modify_weight">Ovdje mozete korigirati svoju tezinu, vasa trenutna tezina je:</string>
+    <string name="history">Povijest mjerenja</string>
+    <string name="location_input">Unos lokacije</string>
+    <string name="modify_weight">Korigiranje tezine</string>
+    <string name="modify_weight_btn">Korigiraj masu</string>
+    <string name="name_location">Naziv lokacije</string>
+    <string name="press_start_again">Pritisnite start ponovno</string>
+    <string name="steps">Koraci</string>
+    <string name="temperature_c">Temeperatura(°C)</string>
+    <string name="time">Vrijeme</string>
+    <string name="title_activity_maps">Karta</string>
+    <string name="weather">Vrijeme</string>
+    <string name="weight_entry">Unos tezine</string>
+    <string name="you_sure">Jeste li sigurni da zelite obrisati povijest mjerenja?</string>
+</resources>
