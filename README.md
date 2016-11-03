@@ -7,7 +7,7 @@ a tekst dugmeta se mijenja u Stop. Service koordinate biljezi svakih deset metar
 kordinate u svaku liniju posebno, s time da je prva linija jedinstveni identifikator svakog pojedinacnog mjerenja. Pritiskom na
 dugme Stop mjerenje staje, Service se gasi, s time da neposredno prije gasenja unose se u bazu podataka rezultati mjerenja.
 Datum mjerenja, prevaljena udaljenost, napravljeni koraci i potrosene kalorije se skupa sa pocetnim i krajnjim koordinatama 
-pohranjuju u SQLite bazu podataka. Pritiskom na tipku History izlistavaju se podaci o svakom mjerenju tablicno. Pritiskom na 
+pohranjuju u SQLite bazu podataka. Pritiskom na tipku History ispisuju se podaci o svakom mjerenju tablicno. Pritiskom na 
 pojedinacni redak otvara se karta na kojoj je prikazana prijedena putanja s pocetnim i krajnjim markerom. Pritiskom na tipku 
 Delete History brise se tablica iz baze podataka skupa sa tekstualnom datotekom sa izmjerenim koordinatama. Buduci da se mjerenje
 dogada u pozadinskom servisu, gasenje ekrana nece utjecati na rad aplikacije. Pritiskom na tipku Modify weight korisnik
