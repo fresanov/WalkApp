@@ -5,6 +5,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.location.LocationManager;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.support.v7.app.AlertDialog;
@@ -14,6 +15,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
 
 import com.resanovic.filip.mapa.database.WalkDatabaseHelper;
 
@@ -44,6 +46,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         initWidgetsAndObjects();
+
 
         if (savedInstanceState != null) {
             btnMeasure.setText(savedInstanceState.getString("button_name"));
@@ -128,16 +131,19 @@ public class MainActivity extends AppCompatActivity {
         btnGetWeather.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                    inputLocationNameDialog();
+                inputLocationNameDialog();
             }
         });
+
     }
-    private void callWeatherMan(){
-        WeatherMan weatherMan = new WeatherMan();
+
+    private void callWeatherMan() {
+        WeatherMan weatherMan = new WeatherMan(this);
         weatherMan.setLocationName(location);
         weatherMan.getData(MainActivity.this);
     }
-    private void inputLocationNameDialog(){
+
+    private void inputLocationNameDialog() {
         AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
         builder.setTitle(getString(R.string.location_input));
         final EditText input = new EditText(MainActivity.this);

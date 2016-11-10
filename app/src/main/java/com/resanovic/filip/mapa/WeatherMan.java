@@ -1,6 +1,7 @@
 package com.resanovic.filip.mapa;
 
 
+import android.app.ProgressDialog;
 import android.content.Context;
 
 import android.content.Intent;
@@ -39,6 +40,11 @@ public class WeatherMan extends AppCompatActivity {
     private JSONArray weatherJsonArray;
     private JSONObject weatherObject;
     private JSONObject mainJsonObject;
+    private Context context;
+
+    public WeatherMan (Context context){
+        this.context = context;
+    }
 
 
     public byte[] getUrlBytes(String UrlSpec) throws IOException {
@@ -108,7 +114,7 @@ public class WeatherMan extends AppCompatActivity {
     }
 
     private class WeatherManTask extends AsyncTask<Void, Void, Void> {
-
+        private ProgressDialog dialog = new ProgressDialog(context);
         @Override
         protected Void doInBackground(Void... params) {
 
@@ -125,7 +131,15 @@ public class WeatherMan extends AppCompatActivity {
         }
 
         @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+            dialog.setMessage("Fetching data...");
+            dialog.show();
+        }
+
+        @Override
         protected void onPostExecute(Void aVoid) {
+            dialog.dismiss();
             Intent i = new Intent(mContext, WeatherActivity.class);
             i.putExtra("city_name", city_name);
             i.putExtra("temp", temp);
@@ -135,6 +149,8 @@ public class WeatherMan extends AppCompatActivity {
             mContext.startActivity(i);
 
         }
+
+
     }
 
     public void getData(Context context) {

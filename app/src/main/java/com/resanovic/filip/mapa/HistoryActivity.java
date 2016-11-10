@@ -74,6 +74,9 @@ public class HistoryActivity extends AppCompatActivity {
                     if(c.getCount()>=1){
                         c.moveToFirst();
                         Intent intent = new Intent(HistoryActivity.this, MapsActivity.class);
+                        intent.putExtra("distance", c.getDouble(2));
+                        intent.putExtra("steps", c.getInt(3));
+                        intent.putExtra("calories", c.getInt(4));
                         intent.putExtra("lat_start", c.getDouble(5));
                         intent.putExtra("lon_start", c.getDouble(6));
                         intent.putExtra("lat_stop", c.getDouble(7));

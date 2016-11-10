@@ -23,4 +23,6 @@
     <string name="distance">Distance</string>
     <string name="steps">Steps</string>
     <string name="calories">Calories</string>
+    <string name="facebook_app_id">983226451800693</string>
+    <string name="share_facebook">Share Facebook</string>
 </resources>
