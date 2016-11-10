@@ -1,17 +1,16 @@
 # WalkApp
-Aplikacija sluzi za mjerenje prevaljene udaljenosti tijekom hoda, istovremeno mjeri i broj koraka koji korisnik napravi. 
-Prilikom prvog pritiska na dugme "start" trazi se od korisnika da unese tjelesnu tezinu koja se koristi prilikom izracuna
-potrosenih kalorija. Potom korisnik mora ponovno pritisnuti "start" kako bi mjerenje zapocelo, ovo se dogada samo prvi put
-buduci da se podatak o tezini sprema u "shared preference". Nakon pritiska na start pokrece se Service koji biljezi koordinate,
-a tekst dugmeta se mijenja u Stop. Service koordinate biljezi svakih deset metara u posebnu datoteku na uredaju gdje upisuje
-kordinate u svaku liniju posebno, s time da je prva linija jedinstveni identifikator svakog pojedinacnog mjerenja. Pritiskom na
-dugme Stop mjerenje staje, Service se gasi, s time da neposredno prije gasenja unose se u bazu podataka rezultati mjerenja.
-Datum mjerenja, prevaljena udaljenost, napravljeni koraci i potrosene kalorije se skupa sa pocetnim i krajnjim koordinatama 
-pohranjuju u SQLite bazu podataka. Pritiskom na tipku History ispisuju se podaci o svakom mjerenju tablicno. Pritiskom na 
-pojedinacni redak otvara se karta na kojoj je prikazana prijedena putanja s pocetnim i krajnjim markerom. Pritiskom na tipku 
-Delete History brise se tablica iz baze podataka skupa sa tekstualnom datotekom sa izmjerenim koordinatama. Buduci da se mjerenje
-dogada u pozadinskom servisu, gasenje ekrana nece utjecati na rad aplikacije. Pritiskom na tipku Modify weight korisnik
-promjeniti podatak o svojoj tjelesnoj masi koji se koristi kod izracuna potrosenih kalorija. Pritiskom na tipku Get Weather od 
-korisnika se trazi da unese ime lokacije na kojoj se nalazi. Taj podatak se koristi za dohvacanje vremenske prognoze za tu 
-lokaciju za narednih 15 sati svaka 3 sata. Za dohvacanje vremenske prognoze aplikacija koristi openweathermap API. 
-Aplikacija je uspjesno testirana na uredaju Samsung S5 neo sa operativnim sustavom Android Lollipop(API 21).
+The app is used to measure distance while walking and at the same time measures the number of steps the users makes.
+When the app is installed and the user presses "Start" button for the first time, the user is asked to enter her/his weight which is consequently used to calculate the amount of calories burnt during the walk. After that, the user has to press "Start" again and the measurement begins. This only happens the very first time since the user's weight is stored in SharedPreferences.
+At this point a background service is started which fetches data from GPS and the text of the button changes to "Stop".
+The background service writes the GPS coordinates every ten metres line by line in a .txt file locally.
+The first line of every measurement is a UUID which is used to parse the data later when getting a specific measurement.
+When the "Stop" button is clicked the background service is shut down and the calculated data of distance, steps and calories together with the date, starting point and stopping point coordinates are written in a SQLite database.
+When "History" button is clicked, data from every measurement is displeyed in a ScrollView in table layout.
+When a specific row in a table is clicked, a map is shown whith the walking route and start and stop markers. There is also a "Share" button on the map which can be used to share the data on Facebook. 
+The "Delete History" button is used to delete the table from the database together with the .txt file which contains the
+coordinates. 
+Because the measurement is running in a background service, the screen of the device can be turned of while using the app.
+The "Modify" button is used to modify the user's weight if necessary since this is used to calculate the calories.
+When "Get Weather" button is pressed the user is asked to enter her/his location. This is used to fetch the weather forecast for the location specified for the next 15 hours in 3 hour intervals. To get the weather data the app uses "openweathermap" API.
+The app was successfully tested on a "Samsung S5 neo" device running Android Lollipop. 
+
